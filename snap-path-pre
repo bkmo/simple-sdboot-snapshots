@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+systemctl stop snapper-boot-entries.path && sleep 1

@@ -1,0 +1,9 @@
+[Unit]
+Description=Refresh systemd-boot entries for BTRFS snapshots
+After=snapper-cleanup.service snapper-timeline.service
+
+[Service]
+Type=oneshot
+User=bkmo
+ExecStart=bash -c 'sudo /usr/local/bin/refresh-snapshot-ukis'
+ExecStartPre=bash -c '/bin/sleep 10'

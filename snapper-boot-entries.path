@@ -1,0 +1,8 @@
+[Unit]
+Description=Watch for snapper snapshot changes
+
+[Path]
+PathChanged=/.snapshots
+Unit=snapper-boot-entries.service
+[Install]
+WantedBy=default.target
