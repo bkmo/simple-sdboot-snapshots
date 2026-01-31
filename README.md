@@ -25,7 +25,7 @@ sudo pacman -S snap-pac --needed  ##recommended for pre post pacman snapshots
 ## How It Works
 
 1. **Snapper** creates BTRFS snapshots in `/.snapshots/`
-2. **manage-snapshot-ukis** generates signed UKIs for each snapshot (defaults to 7 but configurable in /etc/sdboot-snaps.conf)
+2. **manage-snapshot-ukis** generates signed UKIs for each snapshot (default 7 configurable in /etc/sdboot-snaps.conf)
 3. **Systemd Service** auto-refreshes UKIs after snapshot updates/deletions
 4. **systemd-boot** displays snapshot entries in the boot menu
 5. **Desktop notifications** alert when snapshot UKIs are created (can be disabled via .conf)
