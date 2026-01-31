@@ -2,6 +2,14 @@
 
 Boot directly into a previous system state if an update breaks your system.
 
+
+## Installation
+> git clone https://github.com/bkmo/sdboot-snaps.git
+> cd sdboot-snaps
+> makepkg -srci
+> sudo systemctl enable --now snapper-boot-entries.path
+> sudo pacman -S snap-pac --needed  (recommended for pre post pacman snapshots)
+
 ## How It Works
 
 1. **Snapper** creates BTRFS snapshots in `/.snapshots/`
