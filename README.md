@@ -87,7 +87,7 @@ manage-snapshot-ukis cleanup                # Remove all snapshot UKIs
 | UKIs created    | "Created N bootable snapshot entries"        |
 | Creation failed | "Failed to create bootable snapshot entries" |
 
-How to disable Notifications: `SNAPSHOT_NOTIFY=false manage-snapshot-ukis refresh`
+How to disable Notifications: `set NOTIFICATIONS=false in /etc/sdboot-snaps.conf`
 
 **Prerequisites for bootable snapshots:**
 
