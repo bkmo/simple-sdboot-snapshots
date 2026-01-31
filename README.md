@@ -8,7 +8,7 @@ Boot directly into a previous system state if an update breaks your system.
 2. **manage-snapshot-ukis** generates signed UKIs for each snapshot (defaults to 7)
 3. **Systemd Service** auto-refreshes UKIs after snapshot updates/deletions
 4. **systemd-boot** displays snapshot entries in the boot menu
-5. **Desktop notifications** alert when snapshot UKIs are created
+5. **Desktop notifications** alert when snapshot UKIs are created (can be disabled via .conf
 6. Designed to work well with the snap-pac pacman hook package. (recommended)
 
 ## Boot Menu
