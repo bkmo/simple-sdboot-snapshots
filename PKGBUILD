@@ -4,7 +4,7 @@
 
 pkgname=simple-sdboot-snapshots
 pkg_name=sdboot-snaps
-pkgver=1.0
+pkgver=1.0.1
 pkgrel=1
 pkgdesc='Create UKIs for SD-Boot BTRFS bootable snapshot entries'
 arch=('any')
