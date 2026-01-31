@@ -9,7 +9,7 @@ Boot directly into a previous system state if an update breaks your system.
 
 requirements:
    - BTRFS with snapper (snapshots in /.snapshots/N/snapshot format)
-   - systemd-boot installed
+   - systemd-boot installed (ESP mounted to /efi)
    - sbctl for Secure Boot signing (or unsigned if SB disabled)
    - systemd-ukify for UKI generation
 
