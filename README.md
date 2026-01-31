@@ -6,7 +6,7 @@ Boot directly into a previous system state if an update breaks your system.
 
 1. **Snapper** creates BTRFS snapshots in `/.snapshots/`
 2. **manage-snapshot-ukis** generates signed UKIs for each snapshot (defaults to 7)
-3. **Sstemd Service* auto-refreshes UKIs after snapshot updates/deletions
+3. **Systemd Service** auto-refreshes UKIs after snapshot updates/deletions
 4. **systemd-boot** displays snapshot entries in the boot menu
 5. **Desktop notifications** alert when snapshot UKIs are created
 
@@ -91,7 +91,8 @@ How to disable Notifications: `SNAPSHOT_NOTIFY=false manage-snapshot-ukis refres
 
 **Prerequisites for bootable snapshots:**
 
-- Snapper must be enabled with a root config (`snapper.enabled: true` and `snapper.root` defined)
-- Boot cmdline must be read-write (`boot.cmdline.rw: true`)
-- Ukify package must be installed, if secureboot is enabled sbctl must be installed to sign the uki's
+- Snapper must be enabled with a root config.
+- EFI/ESP mounted to /efi with sd-boot installed to /efi.
+- Boot cmdline must be read-write.
+- Ukify package must be installed. If secureboot is enabled, sbctl must be installed to sign the uki's
 
