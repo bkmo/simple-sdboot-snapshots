@@ -25,7 +25,7 @@ if [[ $EUID -ne 0 ]]; then
     echo "Usage: sudo $0 [command]"
     exit 1
 fi
-
+source /etc/sdboot-snaps.conf
 SNAPSHOTS_DIR="/.snapshots"
 EFI_DIR="/efi"
 UKI_DIR="${EFI_DIR}/EFI/Linux"
@@ -33,7 +33,7 @@ SNAPSHOT_UKI_PREFIX="snapshot"
 DEFAULT_SNAPSHOT_COUNT=7  # keep last 7 bootable snapshots
 
 # notification settings
-NOTIFY_ENABLED="true"
+NOTIFY_ENABLED="$NOTIFICATIONS"
 NOTIFY_ICON_SUCCESS="drive-harddisk"
 NOTIFY_ICON_ERROR="dialog-error"
 NOTIFY_ICON_INFO="dialog-information"
