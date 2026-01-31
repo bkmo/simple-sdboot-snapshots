@@ -17,7 +17,7 @@ requirements:
 
 ```bash
 git clone https://github.com/bkmo/simple-sdboot-snapshots.git
-cd sdboot-snaps
+cd simple-sdboot-snapshots
 makepkg -srci
 sudo systemctl enable --now snapper-boot-entries.path
 sudo pacman -S snap-pac --needed  ##recommended for pre post pacman snapshots
