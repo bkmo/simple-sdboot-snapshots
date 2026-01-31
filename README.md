@@ -95,13 +95,13 @@ Log: `/var/log/snapshot-uki-refresh.log`
 ## Manual Snapshot Management
 
 ```bash
-snapper -c root create -d "Before upgrade"  # Create snapshot
-snapper -c root list                        # List snapshots
-manage-snapshot-ukis refresh                # Generate bootable UKIs (default is last 7 but configurable in /etc/sdboot-snaps.conf)
-manage-snapshot-ukis refresh 10             # Generate more if space allows
-manage-snapshot-ukis space                  # Check EFI partition space
-manage-snapshot-ukis list                   # List bootable snapshot UKIs
-manage-snapshot-ukis cleanup                # Remove all snapshot UKIs
+snapper -c root create -d "pre upgrade"  # Create snapshot
+snapper -c root list                     # List snapshots
+manage-snapshot-ukis refresh             # Generate bootable UKIs (defaults to last 7 configurable in /etc/sdboot-snaps.conf)
+manage-snapshot-ukis refresh 10          # Generate more if space allows
+manage-snapshot-ukis space               # Check EFI partition space
+manage-snapshot-ukis list                # List bootable snapshot UKIs
+manage-snapshot-ukis cleanup             # Remove all snapshot UKIs
 ```
 
 ## Desktop Notifications
