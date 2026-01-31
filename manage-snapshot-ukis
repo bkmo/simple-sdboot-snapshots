@@ -30,7 +30,7 @@ SNAPSHOTS_DIR="/.snapshots"
 EFI_DIR="/efi"
 UKI_DIR="${EFI_DIR}/EFI/Linux"
 SNAPSHOT_UKI_PREFIX="snapshot"
-DEFAULT_SNAPSHOT_COUNT=7  # keep last 7 bootable snapshots
+DEFAULT_SNAPSHOT_COUNT="$UKI_NUM"  # default is keep last 7 bootable snapshots can be changed in /etc/sdboot-snaps.conf
 
 # notification settings
 NOTIFY_ENABLED="$NOTIFICATIONS"
