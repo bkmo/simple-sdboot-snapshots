@@ -4,7 +4,7 @@ Boot directly into a previous system state if an update breaks your system.
 
 
 ## Installation
-...
+...bash
 git clone https://github.com/bkmo/sdboot-snaps.git
 cd sdboot-snaps
 makepkg -srci
