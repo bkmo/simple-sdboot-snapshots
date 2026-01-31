@@ -1,7 +1,12 @@
 # Simple SD-Boot uki snapshot creation and automatic boot entries in sd-boot menu
 
 Boot directly into a previous system state if an update breaks your system.
-
+ 
+ BTRFS Snapshot UKI Manager for systemd-boot (Secure Boot Compatible)
+ -creates signed Unified Kernel Images (UKIs) for BTRFS snapshots.
+ -these UKIs are self-contained and work with Secure Boot when signed.
+ -sd-boot menu is automatically populated with snapshot boot entries.
+ 
 requirements:
    - BTRFS with snapper (snapshots in /.snapshots/N/snapshot format)
    - systemd-boot installed
