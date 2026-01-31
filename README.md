@@ -92,6 +92,7 @@ How to disable Notifications: `set NOTIFICATIONS=false in /etc/sdboot-snaps.conf
 **Prerequisites for bootable snapshots:**
 
 - Snapper must be enabled with a root config.
+- BTRFS subvolumes setup the "Arch" way. @, @home, @snapshots.
 - EFI/ESP mounted to /efi with sd-boot installed to /efi.
 - Boot cmdline must be read-write.
 - Ukify package must be installed. If secureboot is enabled, sbctl must be installed to sign the uki's
