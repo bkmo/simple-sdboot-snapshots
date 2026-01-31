@@ -10,7 +10,7 @@ git clone https://github.com/bkmo/sdboot-snaps.git
 cd sdboot-snaps
 makepkg -srci
 sudo systemctl enable --now snapper-boot-entries.path
-sudo pacman -S snap-pac --needed  (recommended for pre post pacman snapshots)
+sudo pacman -S snap-pac --needed  ##recommended for pre post pacman snapshots
 ```
 ## How It Works
 
