@@ -69,16 +69,15 @@ cat /proc/cmdline | grep -o 'subvol=[^ ]*'
 ## Making a Snapshot Permanent (Rollback)
 
 ```bash
-# Option 1: Use snapper-rollback AUR package (recommended)
-snapper-rollback <snapshot_number>
-
-# Option 2: Install btrfs-assistant via pacman.
+# Option 1: Install btrfs-assistant via pacman. (recommended)
 sudo pacman -S btrfs-assistant
+
+# Option 2: Use snapper-rollback AUR package 
+sudo snapper-rollback <snapshot_number>
 
 # Option 3: Manual approach
 # 1. Note snapshot number: cat /proc/cmdline
-# 2. Reboot into normal system
-# 3. Replace current root
+# 2. Replace current root
 sudo btrfs subvolume delete /@
 sudo btrfs subvolume snapshot /.snapshots/<N>/snapshot /@
 ```
@@ -88,9 +87,7 @@ sudo btrfs subvolume snapshot /.snapshots/<N>/snapshot /@
 Systemd service regenerates snapshot UKIs when:
 
 - snapshots are created/deleted
-- Kernel packages upgraded
-- Microcode updated
-- mkinitcpio presets change
+- Packages upgraded/installed/removed (requires snap-pac)
 
 Log: `/var/log/snapshot-uki-refresh.log`
 
@@ -118,7 +115,7 @@ How to disable Notifications: `set NOTIFICATIONS=false in /etc/sdboot-snaps.conf
 **Prerequisites for bootable snapshots:**
 
 - Snapper must be enabled with a root config.
-- BTRFS subvolumes setup the "Arch" way. @, @home, @snapshots.
+- BTRFS subvolumes setup the "Arch" way. @, @home, @snapshots. (OpenSuse layout also valid)
 - EFI/ESP (2GB suggested) mounted to /efi with sd-boot installed to /efi.
 - Boot cmdline must be read-write.
 - systemd-ukify package must be installed.
