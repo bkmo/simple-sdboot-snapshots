@@ -1,8 +1,8 @@
 # Simple SD-Boot uki snapshot creation and automatic boot entries in sd-boot menu
 
 Boot directly into a previous system state if an update breaks your system.
-*Snapshots are r/w  and will boot without an overlay filesystem. (keep it simple).
-Writable snapshots can be modified and will no longer reflect the original 1:1 state.
+Snapshots are r/w  and will boot without an overlay filesystem. (keep it simple).
+**Writable snapshots can be modified and will no longer reflect the original 1:1 state.
 
  BTRFS Snapshot UKI Manager for systemd-boot (Secure Boot Compatible):
    - creates signed Unified Kernel Images (UKIs) for BTRFS snapshots.
