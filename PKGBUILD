@@ -1,6 +1,6 @@
 # Maintainer: bkmo <>
 pkgname=simple-sdboot-snapshots
-pkgver=1.0.4
+pkgver=1.0.5
 pkgrel=1
 pkgdesc='Create UKIs for SD-Boot BTRFS bootable snapshot entries'
 arch=('any')
@@ -11,6 +11,7 @@ optdepends=('sbctl')
 provides=('simple-sdboot-snapshots')
 source=(git+"$url")
 sha256sums=('SKIP')
+backup=("etc/sdboot-snaps.conf")
 
     package() {
     cd $pkgname
