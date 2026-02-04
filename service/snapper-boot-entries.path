@@ -4,5 +4,7 @@ Description=Watch for snapper snapshot changes
 [Path]
 PathChanged=/.snapshots
 Unit=snapper-boot-entries.service
+TriggerLimitIntervalSec=5min
+
 [Install]
-WantedBy=default.target
+WantedBy=multi-user.target
