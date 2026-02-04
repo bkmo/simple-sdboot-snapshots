@@ -33,6 +33,7 @@ UKI_DIR="${EFI_DIR}/EFI/Linux"
 SNAPSHOT_UKI_PREFIX="snapshot"
 DEFAULT_SNAPSHOT_COUNT=7  # default is keep last 7 bootable snapshots can be changed in /etc/sdboot-snaps.conf
 NOTIFY_ENABLED="true" #default is "true"
+MICROCODE="false" #default is "false"
 
 #source the .conf file if it exists
 if [ -e /etc/sdboot-snaps.conf ]; then
@@ -417,9 +418,12 @@ generate_snapshot_uki() {
         # build ukify command arguments
         local ukify_cmd=(ukify build --linux="$vmlinuz")
 
-        # add microcode first, then main initrd
-       # [ -f "/boot/intel-ucode.img" ] && ukify_cmd+=("--initrd=/boot/intel-ucode.img")
-       # [ -f "/boot/amd-ucode.img" ] && ukify_cmd+=("--initrd=/boot/amd-ucode.img")
+# add microcode first if enabled, then main initrd
+
+           if [ "$MICROCODE" = "true" ]; then
+       [ -f "/boot/intel-ucode.img" ] && ukify_cmd+=("--initrd=/boot/intel-ucode.img")
+       [ -f "/boot/amd-ucode.img" ] && ukify_cmd+=("--initrd=/boot/amd-ucode.img")
+         fi
         ukify_cmd+=("--initrd=$initrd")
         ukify_cmd+=("--cmdline=@$cmdline_file")
         ukify_cmd+=("--os-release=@$osrelease_file")
