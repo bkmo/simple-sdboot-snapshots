@@ -1,6 +1,6 @@
 # Maintainer: bkmo <>
 pkgname=simple-sdboot-snapshots
-pkgver=1.0.6
+pkgver=1.0.7
 pkgrel=1
 pkgdesc='Create UKIs for SD-Boot BTRFS bootable snapshot entries'
 arch=('any')
