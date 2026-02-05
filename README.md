@@ -54,6 +54,7 @@ Snapshot #10 [linux] (2025-12-07 10:15)  ← Older bootable snapshot
 
 ## Verifying You're in a Snapshot
 
+You should get a notification you are booted into a snapshot, if not:
 ```bash
 # Check current root subvolume
 btrfs subvolume show /
