@@ -25,7 +25,7 @@ backup=("etc/sdboot-snaps.conf")
     install -Dm 0755  "scripts/refresh-snapshot-ukis" -t "$pkgdir/usr/local/bin/"
     install -Dm 0755  "scripts/manage-snapshot-ukis" -t "$pkgdir/usr/local/bin/"
     install -Dm 0644   README.md "$pkgdir/usr/share/doc/simple-sdboot-snapshots/README.md"
-    install -Dm755 detect/snapshot-detect -t "$pkgdir/usr/bin/"
+    install -Dm755 detect/snapshot-detect -t "$pkgdir/usr/local/bin/"
     install -Dm644 detect/snapshot-detect.desktop -t "$pkgdir/etc/xdg/autostart/"
 
 }
