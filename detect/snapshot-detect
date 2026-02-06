@@ -1,15 +1,16 @@
 #!/bin/bash
-if grep -q @snapshots /proc/cmdline; then
-notify-send -u critical -i data-warning --app-name 'Btrfs-Snapshot RW' 'RW Btrfs Snapshot Detected!' 'Booted into a RW Btrfs Snapshot. Please restore the snapshot now or reboot.'
-exit 0
-fi
 
 if grep -q systemd.volatile=state /proc/cmdline; then
 notify-send -u critical -i data-warning --app-name 'Btrfs-Snapshot RO' 'Btrfs Snapshot Detected!' 'Booted into a RO Snapshot. You can run snapper-rollback or Btrfs-Assistant to restore a snapshot.'
 exit 0
 fi
 
-if stat -f -c '%T' / | grep -iq 'overlay'; then
+if grep -q systemd.volatile=overlay /proc/cmdline; then
 notify-send -u critical -i data-warning --app-name 'Btrfs-Overlayfs Snapshot' 'Overlay RO Snapshot Detected!' 'Booted into a RO Btrfs-Overlayfs Snapshot. You can run snapper-rollback or Btrfs-Assistant to restore a snapshot.'
+exit 0
+fi
+
+if grep -q @snapshots /proc/cmdline; then
+notify-send -u critical -i data-warning --app-name 'Btrfs-Snapshot RW' 'RW Btrfs Snapshot Detected!' 'Booted into a RW Btrfs Snapshot. Please restore the snapshot now or reboot.'
 exit 0
 fi
