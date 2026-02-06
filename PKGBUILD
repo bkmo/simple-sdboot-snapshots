@@ -1,14 +1,14 @@
 # Maintainer: bkmo <>
-pkgname=simple-sdboot-snapshots
-pkgver=1.3
+pkgname=sdboot-snaps
+pkgver=1.1
 pkgrel=1
 pkgdesc='Create UKIs for SD-Boot BTRFS bootable snapshot entries'
 arch=('any')
 license=('GPL3')
-url='https://github.com/bkmo/simple-sdboot-snapshots'
+url='https://github.com/bkmo/sdboot-snaps'
 depends=('systemd-ukify' 'snapper' 'btrfs-progs')
 optdepends=('sbctl')
-provides=('simple-sdboot-snapshots')
+provides=('sdboot-snaps')
 source=(git+"$url")
 sha256sums=('SKIP')
 backup=("etc/sdboot-snaps.conf")
@@ -24,7 +24,7 @@ backup=("etc/sdboot-snaps.conf")
     install -Dm 0755  "config/sdboot-snaps.conf" -t "$pkgdir/etc/"
     install -Dm 0755  "scripts/refresh-snapshot-ukis" -t "$pkgdir/usr/local/bin/"
     install -Dm 0755  "scripts/manage-snapshot-ukis" -t "$pkgdir/usr/local/bin/"
-    install -Dm 0644   README.md "$pkgdir/usr/share/doc/simple-sdboot-snapshots/README.md"
+    install -Dm 0644   README.md "$pkgdir/usr/share/doc/sdboot-snaps/README.md"
     install -Dm755 detect/snapshot-detect -t "$pkgdir/usr/local/bin/"
     install -Dm644 detect/snapshot-detect.desktop -t "$pkgdir/etc/xdg/autostart/"
 
