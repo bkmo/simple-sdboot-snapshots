@@ -25,7 +25,7 @@ makepkg -srci
 sudo systemctl enable --now snapper-boot-entries.path
 sudo pacman -S snap-pac --needed  ##recommended for pre post pacman snapshots
 ```
-Edit /etc/sdboot-snaps.conf to change default options. READONLY,MICROCODE,NOTIFICATION,SNAPSHOTS
+Edit /etc/sdboot-snaps.conf to change default options. READONLY,MICROCODE,NOTIFICATION,SNAPSHOTS,EFI
 ## How It Works
 
 1. **Snapper** creates BTRFS snapshots in `/.snapshots/`
