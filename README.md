@@ -1,4 +1,4 @@
-# Simple SD-Boot uki snapshot creation and automatic boot entries in sd-boot menu for Arch Linux.
+# SD-Boot uki snapshot creation and automatic boot entries in sd-boot menu for Arch Linux.
 Boot directly into a previous system state if an update breaks your system.
 Snapshots are set to r/w  and will boot without an overlay filesystem. (keep it simple).
 **Writable snapshots if modified will no longer reflect their original state.
@@ -9,7 +9,8 @@ OpenSuse btrfs subvol layouts using snapper to rollback.
    - creates signed Unified Kernel Images (UKIs) for BTRFS snapshots.
    - these UKIs are self-contained and work with Secure Boot when signed.
    - sd-boot menu is automatically populated with snapshot boot entries.
-   - CPU Micrcode can be added to the init via config if not using mkinitcpio microcode hook. 
+   - CPU Micrcode can be added to the init via config if not using mkinitcpio microcode hook.
+   - Options to set bootable snapshots RO or RW via config. (RW is default)
 
 requirements:
    - BTRFS with snapper (snapshots in /.snapshots/N/snapshot format)
