@@ -23,6 +23,7 @@ backup=("etc/sdboot-snaps.conf")
     install -Dm 0644  "service/snapper-boot-entries.service" -t "$pkgdir/etc/systemd/system/"
     install -Dm 0644  "config/sdboot-snaps.conf" -t "$pkgdir/etc/"
     install -Dm 0755  "scripts/refresh-snapshot-ukis" -t "$pkgdir/usr/local/bin/"
+    install -Dm 0755  "scripts/manage-snapshot-ukis" -t "$pkgdir/usr/local/bin/"
     install -Dm 0755  "scripts/snapper-list" -t "$pkgdir/usr/local/bin/"
     install -Dm 0644   README.md -t "$pkgdir/usr/share/doc/${pkgname}/"
     install -Dm755 detect/snapshot-detect -t "$pkgdir/usr/local/bin/"
