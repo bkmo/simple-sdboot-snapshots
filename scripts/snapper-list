@@ -1,0 +1,36 @@
+#!/usr/bin/env bash
+
+SNAPSHOTS_DIR="/.snapshots"
+
+# function to get snapshot info from snapper
+get_snapshot_info() {
+    local snapshot_num="$1"
+    local info_file="$SNAPSHOTS_DIR/$snapshot_num/info.xml"
+
+    local description="Snapshot $snapshot_num"
+    local date="Unknown"
+    local type="single"
+
+    if [ -f "$info_file" ]; then
+        description=$(grep -oP '(?<=<description>)[^<]*' "$info_file" 2>/dev/null | head -1) || description="Snapshot $snapshot_num"
+        date=$(grep -oP '(?<=<date>)[^<]*' "$info_file" 2>/dev/null | head -1) || date="Unknown"
+        type=$(grep -oP '(?<=<type>)[^<]*' "$info_file" 2>/dev/null | head -1) || type="single"
+
+        [ -z "$description" ] && description="Snapshot $snapshot_num"
+    fi
+
+    echo "$description|$date|$type"
+}
+
+        count=0
+        for dir in "$SNAPSHOTS_DIR"/*/snapshot; do
+            if [ -d "$dir" ]; then
+                num=$(basename "$(dirname "$dir")")
+                info=$(get_snapshot_info "$num")
+                desc=$(echo "$info" | cut -d'|' -f1)
+                date=$(echo "$info" | cut -d'|' -f2)
+
+                echo "    [$num] $desc ($date)"
+              count=$((count+1))
+            fi
+done
