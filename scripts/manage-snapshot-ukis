@@ -376,7 +376,7 @@ list_snapshots() {
                 echo "    [$num] $desc ($date) ($rorw)(type=$type)"
               count=$((count+1))
             fi
-       done | tac
+       done
 
     #if [ $count -eq 0 ] ; then echo "    No snapshots found in $SNAPSHOTS_DIR"
 
