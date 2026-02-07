@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+if [ -x "$(command -v xmllint)" ]; then
+xmllint --xpath 'string(/snapshot)' /.snapshots/*/info.xml | tac | more
+exit 0
+else
+grep -E ' <date>|<type>|<description>' /.snapshots/*/info.xml | awk -F '</[^}]*>' '{print $1 $2}' | sed 's/[i][^:]*//' | sed 's/[/][^s]*//' | sed 's/[<][^>>]*//' | tac | more
+exit 0
+fi
+
